@@ -23,29 +23,21 @@ export const addBookController = async (req, res) => {
 };
 
 export const updateBookController = async (req, res) => {
-  try {
-    const updatedBook = await updateBook(req.params.id, req.body);
+  const updatedBook = await updateBook(req.params.id, req.body);
 
-    if (updatedBook) {
-      res.json(updatedBook);
-    } else {
-      res.status(404).json({ message: "Книга не найдена" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: "Ошибка при обновлении книги", error: err });
+  if (updatedBook) {
+    res.json(updatedBook);
+  } else {
+    res.status(404).json({ message: "Книга не найдена" });
   }
 };
 
 export const deleteBookController = async (req, res) => {
-  try {
-    const deleted = await deleteBook(req.params.id);
+  const deleted = await deleteBook(req.params.id);
 
-    if (deleted) {
-      res.json({ message: "Книга удалена" });
-    } else {
-      res.status(404).json({ message: "Книга не найдена" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: "Ошибка при удалении книги", error: err });
+  if (deleted) {
+    res.json({ message: "Книга удалена" });
+  } else {
+    res.status(404).json({ message: "Книга не найдена" });
   }
 };

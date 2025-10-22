@@ -36,31 +36,19 @@ export const loginController = async (req, res) => {
   res.json({ token });
 };
 
-export const changePasswordController = async (req, res, next) => {
-  try {
-    validateBody(changePasswordSchema, req.body);
-    await changePassword(req.user.id, req.body);
-    res.json({ message: "Пароль успешно изменён" });
-  } catch (err) {
-    next(err);
-  }
+export const changePasswordController = async (req, res) => {
+  validateBody(changePasswordSchema, req.body);
+  await changePassword(req.user.id, req.body);
+  res.json({ message: "Пароль успешно изменён" });
 };
 
-export const deleteAccountController = async (req, res, next) => {
-  try {
-    await deleteAccount(req.user.id, req.body);
-    res.json({ message: "Аккаунт удалён" });
-  } catch (err) {
-    next(err);
-  }
+export const deleteAccountController = async (req, res) => {
+  await deleteAccount(req.user.id, req.body);
+  res.json({ message: "Аккаунт удалён" });
 };
 
-export const changeEmailController = async (req, res, next) => {
-  try {
-    validateBody(changeEmailSchema, req.body);
-    await changeEmail(req.user.id, req.body);
-    res.json({ message: "Email успешно изменён" });
-  } catch (err) {
-    next(err);
-  }
+export const changeEmailController = async (req, res) => {
+  validateBody(changeEmailSchema, req.body);
+  await changeEmail(req.user.id, req.body);
+  res.json({ message: "Email успешно изменён" });
 };
