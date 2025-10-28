@@ -8,14 +8,12 @@ function methodsServer() {
 
   app.put("/", (req, res) => {
     res
-      .status(200)
       .set("Content-Type", "text/plain")
       .send("PUT-запрос обработан");
   });
 
   app.delete("/", (req, res) => {
     res
-      .status(200)
       .set("Content-Type", "text/plain")
       .send("DELETE-запрос обработан");
   });
