@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const stringUtils_1 = require("./stringUtils");
+const finance_1 = require("./finance");
+const userManagement_1 = require("./userManagement");
+const sequenceUtils_1 = require("./sequenceUtils");
+console.log((0, stringUtils_1.capitalize)("hello"));
+console.log((0, stringUtils_1.reverseString)("TypeScript"));
+const loan = finance_1.Finance.LoanCalculator.calculateMonthlyPayment(10000, 5, 2);
+console.log(`Loan monthly payment: €${loan.toFixed(2)}`);
+const tax = finance_1.Finance.TaxCalculator.calculateTax(50000, 20);
+console.log(`Income tax: €${tax}`);
+const admin = new userManagement_1.UserManagement.Admin.AdminUser("Anastasiia", "anastasiia@example.com");
+console.log(admin.getInfo());
+admin.setSuperAdmin(true);
+console.log(admin.getInfo());
+console.log("Fibonacci:", (0, sequenceUtils_1.generateFibonacci)(50));
+console.log("Primes:", (0, sequenceUtils_1.generatePrimeNumbers)(20));
