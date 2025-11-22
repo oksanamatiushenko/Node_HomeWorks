@@ -25,12 +25,13 @@ export const addBookController = async (req, res) => {
 export const updateBookController = async (req, res) => {
   const updatedBook = await updateBook(req.params.id, req.body);
 
-  if (updatedBook) {
-    res.json(updatedBook);
-  } else {
-    res.status(404).json({ message: "Книга не найдена" });
+  if (!updatedBook) {
+    return res.status(404).json({ message: `Книга с id=${req.params.id} не найдена` });
   }
+
+  res.json(updatedBook);
 };
+
 
 export const deleteBookController = async (req, res) => {
   const deleted = await deleteBook(req.params.id);
