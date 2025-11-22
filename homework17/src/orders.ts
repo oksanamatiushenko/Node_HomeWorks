@@ -1,7 +1,9 @@
+type Status= "pending" | "shipped" |  "delivered";
+
 interface Order {
   orderId: string;
   amount: number;
-  status: "pending" | "shipped" | "delivered";
+  status: Status;
 }
 
 const orders: Order[] = [
@@ -12,11 +14,11 @@ const orders: Order[] = [
 ];
 
 function filterOrdersByStatus(
-  orderList: Order[],
-  status: "pending" | "shipped" | "delivered"
-): Order[] {
+  orderList: Order[], status: Status): Order[] {
   return orderList.filter((order) => order.status === status);
 }
 
 console.log("--- Задание 3 ---")
 console.log(filterOrdersByStatus(orders, "pending"));
+console.log(filterOrdersByStatus(orders, "shipped"));
+console.log(filterOrdersByStatus(orders, "delivered"));

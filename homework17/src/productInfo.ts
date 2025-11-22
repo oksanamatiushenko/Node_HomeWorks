@@ -19,7 +19,7 @@ function updateStock(
   return inventory;
 }
 
-let inventory: Inventory = { Phone: 10 };
+const inventory: Inventory = { Phone: 10 };
 
 console.log("--- Задание 4 ---")
 console.log(updateStock(inventory, ["Phone", 500, 25]));
