@@ -33,21 +33,20 @@ myDog.sound();
 // Задание 2 ================================
 class Library {
   static totalBooks: number = 0;
-  addBook(): void {
+  
+  constructor() {
     Library.totalBooks += 1;
   }
+
   static getTotalBooks(): void {
     console.log(Library.totalBooks);
   }
 }
 const library1 = new Library();
 const library2 = new Library();
+const library3 = new Library();
+const library4 = new Library();
 
-library1.addBook();
-library1.addBook();
-library2.addBook();
-library2.addBook();
-library2.addBook();
 
 console.log("--- Задание 2 ---");
 Library.getTotalBooks();
