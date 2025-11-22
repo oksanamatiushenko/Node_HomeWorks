@@ -10,8 +10,8 @@ type User = {
 
 type AdminUser = Admin & User;
 
-export function AdminUser () {
-  const adminUser = { 
+export function createAdminUser () {
+  const adminUser: AdminUser = { 
     name: "Oksana", 
     email: "oksana@example.com", 
     permissions: ["manager", "content maker"] };
@@ -19,4 +19,4 @@ export function AdminUser () {
 };
 
 console.log("--- Задание 1 ---")
-AdminUser();
+createAdminUser();

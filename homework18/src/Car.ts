@@ -1,10 +1,11 @@
+type Engine = {
+  type: string;
+  horsepower: number;
+}
 type Car = {
   make: string;
   model: string;
-  engine: {
-    type: string;
-    horsepower: number;
-  };
+  engine: Engine;
   year?: number;
 };
 
